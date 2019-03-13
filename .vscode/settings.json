@@ -1,0 +1,19 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+  ],
+  "path-autocomplete.pathMappings": {
+    "@/": "${workspace}/src",
+    "@/assets": "${workspace}/src/assets",
+    "@/components": "${workspace}/src/components",
+    "@/constant": "${workspace}/src/constant",
+    "@/services": "${workspace}/src/services",
+    "@/utils": "${workspace}/src/utils",
+    "@/views": "${workspace}/src/views"
+  }
+}
