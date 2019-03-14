@@ -35,6 +35,16 @@ export default new Router({
       path: '/search',
       name: 'search',
       component: () => import('@/views/Search')
+    },
+    {
+      path: '/filterDemo',
+      name: 'filterDemo',
+      component: () => import('@/views/FilterDemo')
+    },
+    {
+      path: '/listDemo',
+      name: 'listDemo',
+      component: () => import('@/views/ListDemo')
     }
   ]
 })

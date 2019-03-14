@@ -12,6 +12,12 @@
         <ul>
             <li><router-link to="/search">Search</router-link></li>
         </ul>
+        <ul>
+            <li><router-link to="/filterDemo">FilterDemo</router-link></li>
+        </ul>
+        <ul>
+            <li><router-link to="/listDemo">ListDemo</router-link></li>
+        </ul>
     </div>
   </div>
 </template>

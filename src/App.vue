@@ -1,9 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/practice">Practice</router-link>
+      <menuList :items="itemsA"/>
     </div>
     <router-view/>
     <div class="footer">
@@ -32,7 +30,6 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
-
 .footer {
   position: fixed;
   height: 50px;
@@ -51,3 +48,21 @@
   }
 }
 </style>
+<script>
+import MenuList from '@/components/Menu/index.vue'
+
+export default {
+  components: {
+    MenuList
+  },
+  data: function () {
+    return {
+      itemsA: [
+        { id: '/', content: 'Home' },
+        { id: '/about', content: 'About' },
+        { id: '/practice', content: 'Practice' }
+      ]
+    }
+  }
+}
+</script>

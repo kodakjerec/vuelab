@@ -2,6 +2,7 @@
   <div class="search">
     <h1>Search</h1>
     <input v-model="message" placeholder="請輸入關鍵字">
+    <p>目前有筆 {{ filteredCustomers.length }} 資料</p>
     <div v-for="item in filteredCustomers" :key="item">
       {{ item }}
     </div>
@@ -11,7 +12,7 @@
 <style lang="scss" scoped>
 .search p {
   padding: 0 150px;
-  text-align: left;
+  text-align: center;
 }
 </style>
 <script>
