@@ -1,0 +1,33 @@
+<template>
+  <div class="search">
+    <h1>Search</h1>
+    <input v-model="message" placeholder="請輸入關鍵字">
+    <div v-for="item in filteredCustomers" :key="item">
+      {{ item }}
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+.search p {
+  padding: 0 150px;
+  text-align: left;
+}
+</style>
+<script>
+export default {
+  name: 'Search',
+  data () {
+    return {
+      message: '',
+      list: ['Ada', 'Aaliyah', 'Adela', 'Basia', 'Bonnie', 'Brook', 'Candice', 'Celeste', 'Cheryl', 'Ella', 'Eudora', 'Gemma']
+    }
+  },
+  computed: {
+    filteredCustomers: function () {
+      var self = this
+      return this.list.filter(function (cust) { console.log(cust); return cust.toLowerCase().indexOf(self.message.toLowerCase()) >= 0 })
+    }
+  }
+}
+</script>
