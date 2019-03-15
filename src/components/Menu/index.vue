@@ -1,5 +1,5 @@
 <template>
-    <div class="menuList">
+    <div class="menu">
         <template v-for="(item) in items">
             <router-link :to="item.id" :key="item.index">{{item.content}}
             </router-link>
@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'MenuList',
+  name: 'Menu',
   props: {
     items: Array
   },

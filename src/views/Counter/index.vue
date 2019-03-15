@@ -9,12 +9,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.counter span {
-  text-align: center;
-}
-</style>
-
 <script>
 export default {
   name: 'Counter',
@@ -25,3 +19,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.counter span {
+  text-align: center;
+}
+</style>

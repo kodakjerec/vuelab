@@ -18,6 +18,12 @@
         <ul>
             <li><router-link to="/listDemo">ListDemo</router-link></li>
         </ul>
+        <ul>
+            <li><router-link to="/modalDemo">ModalDemo</router-link></li>
+        </ul>
+        <ul>
+            <li><router-link to="/register">Register</router-link></li>
+        </ul>
     </div>
   </div>
 </template>
