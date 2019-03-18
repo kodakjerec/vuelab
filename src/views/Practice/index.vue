@@ -24,6 +24,12 @@
         <ul>
             <li><router-link to="/register">Register</router-link></li>
         </ul>
+        <ul>
+            <li><router-link to="/ajaxDemo">AjaxDemo</router-link></li>
+        </ul>
+        <ul>
+            <li><router-link to="/refDemo">RefDemo</router-link></li>
+        </ul>
     </div>
   </div>
 </template>

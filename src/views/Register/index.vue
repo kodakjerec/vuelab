@@ -1,54 +1,79 @@
 <template>
-    <form action="http://localhost:8080/register">
-        身分証字號<input type="text" v-model="textID" v-validate="'required'" name="cusID">
-        <br>
-        <span>{{ errors.first('cusID') }}</span>
-        <br>
-        姓名<input type="text" v-model="textName" v-validate="'required'" name="cusName">
-        <br>
-        <span>{{ errors.first('cusName') }}</span>
-        <br>
-        性別
-        <input type="radio" value="Boy" v-model="selected" name="sex">男
-        <input type="radio" value="Girl" v-model="selected" name="sex">女
-        <br>
-        手機號碼<input type="text" v-model="textNumber" v-validate="'required'" name="cusNumber">
-        <br>
-        <span>{{ errors.first('cusNumber') }}</span>
-        <br>
+  <div class="form-veeValidate">
+
+    <form @submit.prevent="handleSubmit">
+      <div>
+        <p>身分証字號</p>
+        <input type="text" v-model="user.textID" v-validate="'required|max:10|regex:[A-Z]{1}[0-9]'" name="cusID">
+        <div v-show="errors.has('cusID')" class="red_danger">{{errors.first("cusID")}}</div>
+      </div>
+
+      <div>
+        <p>姓名</p>
+        <input type="text" v-model="user.textName" v-validate="'required|max:30'" name="cusName">
+        <div v-show="errors.has('cusName')" class="red_danger">{{errors.first("cusName")}}</div>
+      </div>
+
+      <div>
+        <p>性別</p>
+        <input type="radio" v-model="user.selectedSex" v-validate="'required'" name="sex" value="boy">男
+        <input type="radio" v-model="user.selectedSex" v-validate="'required'" name="sex" value="girl">女
+        <div v-show="errors.has('sex')" class="red_danger">{{errors.first("sex")}}</div>
+      </div>
+
+      <div>
+        <p>手機號碼</p>
+        <input type="text" v-model="user.textNumber" v-validate="'required|max:10|numeric'" name="cusNumber">
+        <div v-show="errors.has('cusNumber')" class="red_danger">{{errors.first("cusNumber")}}</div>
+      </div>
+
+      <div>
         <button type="submit">送出</button>
-        <button type="reset">清除</button>
+        <button type="reset" @click="clean">清除</button>
+      </div>
     </form>
+
+  </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import VeeValidate from 'vee-validate'
-
-const config = {
-  aria: true,
-  classNames: {},
-  classes: false,
-  delay: 0,
-  dictionary: null,
-  errorBagName: 'errors', // change if property conflicts
-  events: 'input|blur',
-  fieldsBagName: 'fields',
-  i18n: null, // the vue-i18n plugin instance
-  i18nRootKey: 'validations', // the nested key under which the validation messages will be located
-  inject: true,
-  locale: 'en',
-  validity: false,
-  useConstraintAttrs: true
-}
-
-Vue.use(VeeValidate, config)
 
 export default {
+  name: 'Form-veeValidate',
   data: function () {
     return {
+      user: {
+        textID: '',
+        textName: '',
+        selectedSex: '',
+        textNumber: ''
+      }
+    }
+  },
+  methods: {
+    handleSubmit (e) {
+      this.submitted = true
+      this.$validator.validate().then(valid => {
+        if (valid) { // 通過審核
+          alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.user))
+        } else {
 
+        }
+      })
+    },
+    clean: function () {
+      this.textID = ''
+      this.textName = ''
+      this.selectedSex = ''
+      this.textNumber = ''
+      this.$validator.reset() // 清空所有錯誤訊息
     }
   }
 }
 </script>
+
+<style>
+.red_danger{
+  color:red
+}
+</style>

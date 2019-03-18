@@ -6,7 +6,9 @@
                 <div class="modal-container">
 <!-- <slot name="header" /> -->
                     <div class="modal-header">
-                        <button type="button" class="btn-close" @click="close">x</button>
+                        <div>
+                          <button type="button" class="btn-close" @click="close">x</button>
+                        </div>
                         <h1>{{title}}</h1>
                     </div>
                 <slot />
@@ -74,4 +76,5 @@ export default {
 .modal-default-button {
   float: center;
 }
+
 </style>

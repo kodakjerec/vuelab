@@ -55,6 +55,21 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: () => import('@/views/Register')
+    },
+    {
+      path: '/ajaxDemo',
+      name: 'ajaxDemo',
+      component: () => import('@/views/AjaxDemo')
+    },
+    {
+      path: '/refDemo',
+      name: 'refDemo',
+      component: () => import('@/views/RefDemo')
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: () => import('@/views/Test')
     }
   ]
 })
