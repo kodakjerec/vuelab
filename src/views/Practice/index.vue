@@ -13,25 +13,28 @@
             <li><router-link to="/search">Search</router-link></li>
         </ul>
         <ul>
-            <li><router-link to="/filterDemo">FilterDemo</router-link></li>
+            <li><router-link to="/filterDemo">Filter Demo</router-link></li>
         </ul>
         <ul>
-            <li><router-link to="/listDemo">ListDemo</router-link></li>
+            <li><router-link to="/listDemo">List Demo</router-link></li>
         </ul>
         <ul>
-            <li><router-link to="/modalDemo">ModalDemo</router-link></li>
+            <li><router-link to="/modalDemo">Modal Demo</router-link></li>
         </ul>
         <ul>
             <li><router-link to="/register">Register</router-link></li>
         </ul>
         <ul>
-            <li><router-link to="/ajaxDemo">AjaxDemo</router-link></li>
+            <li><router-link to="/ajaxDemo">Ajax Demo</router-link></li>
         </ul>
         <ul>
-            <li><router-link to="/refDemo">RefDemo</router-link></li>
+            <li><router-link to="/refDemo">Ref Demo</router-link></li>
         </ul>
         <ul>
-            <li><router-link to="/carouselDemo">CarouselDemo</router-link></li>
+            <li><router-link to="/carouselDemo">Carousel Demo</router-link></li>
+        </ul>
+        <ul>
+            <li><router-link to="/counterWithState">Counter With State</router-link></li>
         </ul>
     </div>
   </div>

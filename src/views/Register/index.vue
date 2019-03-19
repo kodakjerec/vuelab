@@ -62,10 +62,10 @@ export default {
       })
     },
     clean: function () {
-      this.textID = ''
-      this.textName = ''
-      this.selectedSex = ''
-      this.textNumber = ''
+      this.user.textID = ''
+      this.user.textName = ''
+      this.user.selectedSex = ''
+      this.user.textNumber = ''
       this.$validator.reset() // 清空所有錯誤訊息
     }
   }

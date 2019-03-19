@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     setFocus: function () {
-      console.log(this.$refs)
+      // console.log(this.$refs)
       this.$refs.inFocus.focus()
     }
   }

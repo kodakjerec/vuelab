@@ -1,5 +1,8 @@
 import 'normalize.css/normalize.css'
 import '@/assets/css/app.scss'
+// GinaAdd-Owl Carousel 2
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel'
 
 import Vue from 'vue'
 import App from './App.vue'

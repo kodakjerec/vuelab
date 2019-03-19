@@ -72,6 +72,11 @@ export default new Router({
       component: () => import('@/views/CarouselDemo')
     },
     {
+      path: '/counterWithState',
+      name: 'counterWithState',
+      component: () => import('@/views/CounterWithState')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import('@/views/Test')
