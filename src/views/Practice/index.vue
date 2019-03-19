@@ -30,6 +30,9 @@
         <ul>
             <li><router-link to="/refDemo">RefDemo</router-link></li>
         </ul>
+        <ul>
+            <li><router-link to="/carouselDemo">CarouselDemo</router-link></li>
+        </ul>
     </div>
   </div>
 </template>

@@ -7,7 +7,7 @@ import router from './router'
 import store from './store'
 // GinaAdd-VeeValidate
 import VeeValidate, { Validator } from 'vee-validate'
-import zh_TW from 'vee-validate/dist/locale/zh_TW'
+import zhTW from 'vee-validate/dist/locale/zh_TW'
 // GinaAdd-axios(ajax)
 import axios from 'axios'
 
@@ -18,9 +18,9 @@ Vue.config.productionTip = false
 
 // GinaAdd-VeeValidate
 Vue.use(VeeValidate)
-Validator.localize('zh_TW', zh_TW)
+Validator.localize('zhTW', zhTW)
 const dict = {
-  zh_TW: {
+  zhTW: {
     messages: {
       required: '此欄位為必填欄位。',
       max: '輸入格式錯誤，請重新輸入。',

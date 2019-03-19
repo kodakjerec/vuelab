@@ -67,6 +67,11 @@ export default new Router({
       component: () => import('@/views/RefDemo')
     },
     {
+      path: '/carouselDemo',
+      name: 'carouselDemo',
+      component: () => import('@/views/CarouselDemo')
+    },
+    {
       path: '/test',
       name: 'test',
       component: () => import('@/views/Test')
