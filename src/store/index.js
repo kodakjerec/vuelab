@@ -26,5 +26,10 @@ export default new Vuex.Store({
       // console.log('decrement in action')
       context.commit('decrement')// 前往store的mutations
     }
+  },
+  getters: {
+    ansState (state) {
+      return state.count
+    }
   }
 })

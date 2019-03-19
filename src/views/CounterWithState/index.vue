@@ -1,8 +1,8 @@
 <template>
     <div class="counterWithState">
         <h1>Counter With State</h1>
-        <p>Counter: {{ $store.state.count }}</p>
-        <!-- <p>Counter: {{ countFromStore }}</p> -->
+        <!-- <p>Counter: {{ $store.state.count }}</p> -->
+        <p>Counter: {{ countFromStore }}</p>
         <div>
             <button @click="decrement">減一</button>
             <button @click="increment">加一</button>
@@ -21,11 +21,11 @@ export default {
 
     }
   },
-  // computed: {
-  //  countFromStore () {
-  //    return store.state.count
-  //  }
-  // },
+  computed: {
+    countFromStore () {
+      return store.getters.ansState
+    }
+  },
   methods: {
     increment: function () {
       // console.log('increment in view')
