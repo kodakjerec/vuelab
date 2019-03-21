@@ -1,7 +1,7 @@
 <template>
   <div class="filterDemo">
     <h1>Filter Demo</h1>
-    <input v-model="message" placeholder="請輸入數字">
+    <input v-model="message" placeholder="請輸入數字" type="number">
     <p>轉換後的結果 => {{ message|commafy }} </p>
   </div>
 </template>

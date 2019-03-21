@@ -4,7 +4,7 @@
     <form @submit.prevent="handleSubmit">
       <div>
         <p>身分証字號</p>
-        <input type="text" v-model="user.textID" v-validate="'required|max:10|regex:[A-Z]{1}[0-9]'" name="cusID">
+        <input type="text" v-model="user.textID" v-validate="'required|max:10|regex:[A-Z]{1}[0-9]'" name="cusID" maxlength=10>
         <div v-show="errors.has('cusID')" class="red_danger">{{errors.first("cusID")}}</div>
       </div>
 
@@ -23,7 +23,7 @@
 
       <div>
         <p>手機號碼</p>
-        <input type="text" v-model="user.textNumber" v-validate="'required|max:10|numeric'" name="cusNumber">
+        <input type="text" v-model="user.textNumber" v-validate="'required|max:10|numeric'" name="cusNumber" >
         <div v-show="errors.has('cusNumber')" class="red_danger">{{errors.first("cusNumber")}}</div>
       </div>
 
@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .red_danger{
   color:red
 }

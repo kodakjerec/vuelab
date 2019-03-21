@@ -2,7 +2,7 @@
     <div class="counterWithState">
         <h1>Counter With State</h1>
         <!-- <p>Counter: {{ $store.state.count }}</p> -->
-        <p>Counter: {{ countFromStore }}</p>
+        <p>Counter: {{ ansState }}</p>
         <div>
             <button @click="decrement">減一</button>
             <button @click="increment">加一</button>
@@ -12,7 +12,7 @@
 
 <script>
 
-import store from '@/store/index.js'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'CounterWithState',
@@ -22,19 +22,11 @@ export default {
     }
   },
   computed: {
-    countFromStore () {
-      return store.getters.ansState
-    }
+    ...mapGetters(['ansState']) // 對應到store的getter
   },
   methods: {
-    increment: function () {
-      // console.log('increment in view')
-      store.dispatch('increment')// 前往store的actions
-    },
-    decrement: function () {
-      // console.log('decrement in view')
-      store.dispatch('decrement')// 前往store的actions
-    }
+    // console.log('increment in view')
+    ...mapActions(['increment', 'decrement']) // 前往store的actions
   }
 }
 </script>

@@ -27,9 +27,9 @@
                 <p>高: {{ listDetail.height }} </p>
                 <p>重量:{{ listDetail.weight }} </p>
                 <p>說明: {{ listDetail.description }} </p>
-                    <button class="modal-default-button" @click="closeModal">
-                    Close PopupModel
-                    </button>
+                <button class="modal-default-button" @click="closeModal">
+                  Close PopupModel
+                </button>
             </div>
 
             </popup-modal>
@@ -103,7 +103,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .ajaxDemo li{
     text-align: center;
 }

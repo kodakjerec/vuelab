@@ -1,10 +1,12 @@
 <template>
     <div class="menu">
-        <template v-for="(item) in items">
-            <router-link :to="item.id" :key="item.index">{{item.content}}
+      <div id="nav">
+        <template v-for="(item, key, index) in items">
+            <router-link :to="item.id" :key="key">{{item.content}}
             </router-link>
-            <template v-if="isShow(items.indexOf(item), items)"> | </template>
+            <template v-if="isShow(index, items)"> | </template>
         </template>
+      </div>
     </div>
 </template>
 
@@ -15,8 +17,8 @@ export default {
     items: Array
   },
   methods: {
-    isShow: function (itemIndex, items) {
-      if ((itemIndex + 1) === items.length) {
+    isShow: function (index, items) {
+      if ((index + 1) === items.length) {
         return false
       } else {
         return true
@@ -25,3 +27,20 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+#nav {
+  padding: 30px;
+  margin-bottom: 10px;
+  background-color: #eee;
+}
+
+#nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div class="listDemo">
-    <list :lists="listFromListDemo"/>
+    <list :lists="listFromListDemo" @clickFromChild="actFromFather"/>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   data () {
     return {
       listFromListDemo: ['AAA', 'BBB', 'CCC', 'DDD']
+    }
+  },
+  methods: {
+    actFromFather: function (index, name) {
+      alert('"index":' + index + ', "value":' + name)
     }
   }
 }

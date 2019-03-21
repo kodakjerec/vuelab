@@ -16,7 +16,7 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
+      // route level code-splitting 動態載入會切檔案打包
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ '@/views/About')
@@ -24,62 +24,62 @@ export default new Router({
     {
       path: '/practice',
       name: 'practice',
-      component: () => import('@/views/Practice')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/Practice')
     },
     {
       path: '/counter',
       name: 'counter',
-      component: () => import('@/views/Counter')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/Counter')
     },
     {
       path: '/search',
       name: 'search',
-      component: () => import('@/views/Search')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/Search')
     },
     {
       path: '/filterDemo',
       name: 'filterDemo',
-      component: () => import('@/views/FilterDemo')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/FilterDemo')
     },
     {
       path: '/listDemo',
       name: 'listDemo',
-      component: () => import('@/views/ListDemo')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/ListDemo')
     },
     {
       path: '/modalDemo',
       name: 'modalDemo',
-      component: () => import('@/views/ModalDemo')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/ModalDemo')
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import('@/views/Register')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/Register')
     },
     {
       path: '/ajaxDemo',
       name: 'ajaxDemo',
-      component: () => import('@/views/AjaxDemo')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/AjaxDemo')
     },
     {
       path: '/refDemo',
       name: 'refDemo',
-      component: () => import('@/views/RefDemo')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/RefDemo')
     },
     {
       path: '/carouselDemo',
       name: 'carouselDemo',
-      component: () => import('@/views/CarouselDemo')
+      component: () => import(/* webpackChunkName: "practice" */ '@/views/CarouselDemo')
     },
     {
       path: '/counterWithState',
       name: 'counterWithState',
-      component: () => import('@/views/CounterWithState')
+      component: () => import(/* webpackChunkName: "practice" */'@/views/CounterWithState')
     },
     {
       path: '/test',
       name: 'test',
-      component: () => import('@/views/Test')
+      component: () => import(/* webpackChunkName: "practice" */'@/views/Test')
     }
   ]
 })

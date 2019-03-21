@@ -2,13 +2,13 @@
   <div class="modalDemo">
     <h1>Modal Demo</h1>
         <button type="button" class="btn" @click="showModal">Open PopupModal</button>
-        <popup-modal :title="vtitle" :isOpen="isOpen" v-show="isOpen" @close="closeModal">
+        <popup-modal :title="title" :isOpen="isOpen" v-show="isOpen" @close="closeModal">
 
             <div class="modal-body">
                 <p>Woohoo, you're reading this text in a model!</p>
-                    <button class="modal-default-button" @click="closeModal">
-                    Close PopupModel
-                    </button>
+                <button class="modal-default-button" @click="closeModal">
+                  Close PopupModel
+                </button>
             </div>
             <!-- <p>xxxxx</p>
             <p>xxxxx</p> -->
@@ -31,7 +31,7 @@ export default {
   },
   data () {
     return {
-      vtitle: 'Demo Model',
+      title: 'Demo Model',
       isOpen: false
     }
   },
@@ -45,3 +45,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.modal-default-button {
+  float: center;
+}
+
+</style>

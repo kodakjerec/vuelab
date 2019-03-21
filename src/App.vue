@@ -9,6 +9,29 @@
     </div>
   </div>
 </template>
+
+<script>
+import MenuList from '@/components/Menu/index.vue'
+
+export default {
+  components: {
+    MenuList
+  },
+  data: function () {
+    return {
+      itemsA: [
+        { id: '/', content: 'Home' },
+        { id: '/about', content: 'About' },
+        { id: '/practice', content: 'Practice' }
+      ]
+    }
+  },
+  methods: {
+
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 #app {
   text-align: center;
@@ -16,20 +39,20 @@
   padding-bottom: 50px;
 }
 
-#nav {
-  padding: 30px;
-  margin-bottom: 10px;
-  background-color: #eee;
-}
+// #nav { //移至componentMenu裡面
+//   padding: 30px;
+//   margin-bottom: 10px;
+//   background-color: #eee;
+// }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+// #nav a {
+//   font-weight: bold;
+//   color: #2c3e50;
+// }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+// #nav a.router-link-exact-active {
+//   color: #42b983;
+// }
 .footer {
   position: fixed;
   height: 50px;
@@ -48,21 +71,3 @@
   }
 }
 </style>
-<script>
-import MenuList from '@/components/Menu/index.vue'
-
-export default {
-  components: {
-    MenuList
-  },
-  data: function () {
-    return {
-      itemsA: [
-        { id: '/', content: 'Home' },
-        { id: '/about', content: 'About' },
-        { id: '/practice', content: 'Practice' }
-      ]
-    }
-  }
-}
-</script>

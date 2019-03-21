@@ -9,12 +9,6 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.search p {
-  padding: 0 150px;
-  text-align: center;
-}
-</style>
 <script>
 export default {
   name: 'Search',
@@ -32,3 +26,10 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.search p {
+  padding: 0 150px;
+  text-align: center;
+}
+</style>

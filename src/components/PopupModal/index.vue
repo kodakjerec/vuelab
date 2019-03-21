@@ -5,11 +5,9 @@
             <div class="modal-wrapper">
                 <div class="modal-container">
 <!-- <slot name="header" /> -->
+                    <button type="button" class="btn-close modal-default-buttonx " @click="close" >x</button>
                     <div class="modal-header">
-                        <div>
-                          <button type="button" class="btn-close" @click="close">x</button>
-                        </div>
-                        <h1>{{title}}</h1>
+                          <h1>{{title}}</h1>
                     </div>
                 <slot />
                 </div>
@@ -26,11 +24,6 @@ export default {
     title: String,
     isOpen: Boolean
   },
-  data () {
-    return {
-
-    }
-  },
   methods: {
     close: function () {
       this.$emit('close')
@@ -40,7 +33,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .modal-mask {
   position: fixed;
   z-index: 9998;
@@ -73,8 +66,8 @@ export default {
   margin: 20px 0;
 }
 
-.modal-default-button {
-  float: center;
+.modal-default-buttonx {
+  float: right;
 }
 
 </style>
