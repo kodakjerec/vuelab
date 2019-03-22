@@ -13,6 +13,9 @@
 </template>
 
 <script>
+
+import CallService from '@/services/ajaxService.js'
+
 export default {
   name: 'CarouselDemo',
   data: function () {
@@ -21,12 +24,11 @@ export default {
     }
   },
   mounted: function () {
-    this.$http
-      .post('http://localhost:9999/product/list')
-      .then(response => {
-        if (response.data.isSuccess) {
-          this.dataList = response.data.data
-          if (response.data.data.length === 0) {
+    CallService.getProList().then(
+      value => {
+        if (value.data.isSuccess) {
+          this.dataList = value.data.data
+          if (value.data.data.length === 0) {
             alert('查無資料！！')
           } else {
             this.$nextTick(function () {
@@ -53,11 +55,8 @@ export default {
         } else {
           alert('查無資料！！')
         }
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
+      }
+    )
   }
 }
 </script>

@@ -12,7 +12,7 @@ import store from './store'
 // import VeeValidate, { Validator } from 'vee-validate'
 // import zhTW from 'vee-validate/dist/locale/zh_TW'
 // GinaAdd-axios(ajax)
-import axios from 'axios'
+// import axios from 'axios'
 
 // setup
 import './setup/setupVueFilters'
@@ -36,7 +36,7 @@ Vue.config.productionTip = false
 // Validator.localize(dict)
 
 // GinaAdd-axios(ajax)
-Vue.prototype.$http = axios
+// Vue.prototype.$http = axios
 
 new Vue({
   router,

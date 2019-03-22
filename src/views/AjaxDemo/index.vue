@@ -41,6 +41,7 @@
 <script>
 
 import PopupModal from '@/components/PopupModal/index.vue'
+import CallService from '@/services/ajaxService.js'
 
 export default {
   name: 'AjaxDemo',
@@ -58,42 +59,40 @@ export default {
     }
   },
   mounted: function () {
-    this.$http
-      .post('http://localhost:9999/product/list')
-      .then(response => {
-        if (response.data.isSuccess) {
-          this.list = response.data.data
-          if (response.data.data.length === 0) {
+    CallService.getProList()
+      .then(
+        value => { // console.log(value.data.data)
+          if (value.data.isSuccess && (value.data.data.length !== 0)) {
+            this.list = value.data.data
+            if (this.list.length === 0) {
+              this.noPro = true
+            }
+          } else {
             this.noPro = true
           }
-        } else {
-          this.noPro = true
         }
-      })
-      .catch(error => {
-        console.log(error)
-        this.errored = true
-      })
+      )
+    // CallService.getProList().then((value) => console.log(value))
   },
   methods: {
-    // test: function (event) {
-    //  alert(event.target.id)
-    // },
     showModal: function (event) {
-      this.$http
-        .post('http://localhost:9999/product/detail', { prodId: event.target.id })// 對API傳入Request
-        .then(response => {
-          if (response.data.isSuccess) {
-            this.isOpen = true
-            this.listDetail = response.data.data
-          } else {
-            alert(response.data.message)
+      CallService.getProDetail(event.target.id)
+        .then(
+          value => { // console.log(value)
+            if (value.data.isSuccess) {
+              this.isOpen = true
+              this.listDetail = value.data.data
+            } else {
+              alert(value.data.message)
+            }
           }
-        })
-        .catch(error => {
-          console.log(error)
-          this.errored = true
-        })
+        )
+      // if (CallService.getProDetail().data.isSuccess) {
+      //   this.isOpen = true
+      //   this.listDetail = CallService.getProDetail().data.data
+      // } else {
+      //   alert(CallService.getProDetail().data.message)
+      // }
     },
     closeModal: function () {
       this.isOpen = false
