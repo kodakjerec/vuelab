@@ -1,8 +1,8 @@
 <template>
     <div class="menu">
       <div id="nav">
-        <template v-for="(item, key, index) in items">
-            <router-link :to="item.id" :key="key">{{item.content}}
+        <template v-for="(item, index) in items">
+            <router-link :to="item.id" :key="index">{{item.content}}
             </router-link>
             <template v-if="isShow(index, items)"> | </template>
         </template>

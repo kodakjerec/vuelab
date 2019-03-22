@@ -1,7 +1,7 @@
 <template>
   <div class="list">
     <h1>List Demo</h1>
-    <div v-for="(item, key, index) in lists" :key="key">
+    <div v-for="(item, index) in lists" :key="index">
       <div @click="clickitem(index, item)">{{ item }}</div>
     </div>
   </div>

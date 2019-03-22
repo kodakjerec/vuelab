@@ -22,7 +22,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['ansState']) // 對應到store的getter
+    ...mapGetters(['ansState']) // 對應到store的getter，要取名字的話就要用{}...mapGetters({ xxx :'ansState'})
   },
   methods: {
     // console.log('increment in view')

@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     actFromFather: function (index, name) {
-      alert('"index":' + index + ', "value":' + name)
+      alert(`"index":"${index}","value":"${name}"`)
     }
   }
 }

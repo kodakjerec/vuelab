@@ -23,7 +23,7 @@
 
       <div>
         <p>手機號碼</p>
-        <input type="text" v-model="user.textNumber" v-validate="'required|max:10|numeric'" name="cusNumber" >
+        <input type="number" v-model="user.textNumber" v-validate="'required|max:10|decimal'" name="cusNumber">
         <div v-show="errors.has('cusNumber')" class="red_danger">{{errors.first("cusNumber")}}</div>
       </div>
 
