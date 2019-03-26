@@ -32,4 +32,16 @@ export default {
   padding: 0 150px;
   text-align: center;
 }
+.search div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 10%;
+  background-color:#eee;
+  padding: 0 150px;
+  text-align: center;
+}
+.search input {
+  padding: 0 150px;
+  text-align: center;
+}
 </style>

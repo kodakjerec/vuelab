@@ -46,6 +46,11 @@
   text-align: center;
 }
 .practice div {
+  padding: 0.2%;
+  width: 20%;
+  background-color:#eee;
+  margin-left:auto;
+  margin-right: auto;
   text-align: center;
 }
 .practice ul {

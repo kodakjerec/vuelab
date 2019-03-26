@@ -12,7 +12,7 @@
                 <template v-for="(item, index) in list">
                     <li :key="index">
                         <img :src="item.prodImg" :id="item.prodId" @click="showModal">
-                        {{ item.prodName }}
+                        <span @click="showModal" :id="item.prodId">{{ item.prodName }}</span>
                     </li>
                 </template>
             </ul>

@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     // console.log('increment in view')
-    ...mapActions(['increment', 'decrement']) // 前往store的actions
+    ...mapActions(['increment', 'decrement']) // // 将 `this.increment()` 映射为 `this.$store.dispatch('increment')`，並前往store的actions
   }
 }
 </script>
